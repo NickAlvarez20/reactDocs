@@ -4,12 +4,12 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 // Intro Section
-function MyButton() {
-  const [count, setCount] = useState(0);
-  function handleClick() {
-    setCount(count + 1);
-  }
-  return <button onClick={handleClick}>Clicked {count} times.</button>;
+function MyButton({ count, onClick }) {
+  return <button onClick={onClick}>Clicked {count} times.</button>;
+}
+
+function MyDecrementButton({ reduceCount, onClick }) {
+  return <button onClick={onClick}>Removed {reduceCount} react noobs.</button>;
 }
 
 function AboutPage() {
@@ -109,12 +109,31 @@ function FavoritesHobbies() {
 // Main Webpage with components
 
 export default function App() {
+  const [count, setCount] = useState(0);
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  const [decrementCount, setDecrementCount] = useState(100);
+  function handleDecrement() {
+    decrementCount <= 0
+      ? setDecrementCount(decrementCount + 100)
+      : setDecrementCount(decrementCount - 10);
+  }
   return (
     <>
       <div>
         <h1>Welcome to my app</h1>
-        <MyButton />
-        <MyButton />
+        <MyButton count={count} onClick={handleClick} />
+        <MyButton count={count} onClick={handleClick} />
+        <MyDecrementButton
+          reduceCount={decrementCount}
+          onClick={handleDecrement}
+        />
+        <MyDecrementButton
+          reduceCount={decrementCount}
+          onClick={handleDecrement}
+        />
       </div>
       <div>
         <AboutPage />
