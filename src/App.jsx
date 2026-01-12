@@ -7,13 +7,28 @@ function MyButton() {
   return <button>Here's a button</button>;
 }
 
-function App() {
+function AboutPage() {
   return (
     <>
-      <h1>Welcome to my app</h1>
-      <MyButton />
+      <h1>About</h1>
+      <p>Hello there, I am a developer. <br/> Did you read the documents?</p>
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <>
+      <div>
+        <h1>Welcome to my app</h1>
+        <MyButton />
+      </div>
+      <div>
+        <AboutPage/>
+      </div>
     </>
   );
 }
 
-export default App;
+
+
