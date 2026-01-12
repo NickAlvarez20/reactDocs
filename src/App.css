@@ -1,10 +1,37 @@
 #root {
-  max-width: 1280px;
+  max-width: 100vw;
   margin: 0 auto;
   padding: 2rem;
+  width: 75vw;
   text-align: center;
+  background-color: rgb(0, 34, 255);
+  color: black;
 }
 
 .avatar {
   border-radius: 50%;
+}
+
+.hobbies-container {
+  width: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.hobbies-img-styling {
+  border-radius: 20%;
+  border: 5px groove black;
+}
+
+.hobbies-list li::marker {
+  content: "⭐ ";
+}
+
+/* If using ::marker, keep the default list style or set it to none */
+.hobbies-list {
+  list-style-type: none; /* marker works even if this is none */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
 }
