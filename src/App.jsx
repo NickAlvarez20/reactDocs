@@ -3,10 +3,13 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
-
 // Intro Section
 function MyButton() {
-  return <button>Here's a button</button>;
+  const [count, setCount] = useState(0);
+  function handleClick() {
+    setCount(count + 1);
+  }
+  return <button onClick={handleClick}>Clicked {count} times.</button>;
 }
 
 function AboutPage() {
@@ -73,7 +76,7 @@ const hobbies = [
 ];
 function HobbyList() {
   const listItems = hobbies.map((hobby) => (
-    <li key={hobby.id} style={{color: hobby.isInstrument ? 'white': 'cyan'}}>
+    <li key={hobby.id} style={{ color: hobby.isInstrument ? "white" : "cyan" }}>
       {hobby.name}
       <div>
         <img
@@ -103,8 +106,6 @@ function FavoritesHobbies() {
   );
 }
 
-
-
 // Main Webpage with components
 
 export default function App() {
@@ -112,6 +113,7 @@ export default function App() {
     <>
       <div>
         <h1>Welcome to my app</h1>
+        <MyButton />
         <MyButton />
       </div>
       <div>
