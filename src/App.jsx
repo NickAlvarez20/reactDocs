@@ -11,10 +11,32 @@ function AboutPage() {
   return (
     <>
       <h1>About</h1>
-      <p>Hello there, I am a developer. <br/> Did you read the documents?</p>
+      <p>
+        Hello there, I am a developer. <br /> Did you read the documents?
+      </p>
     </>
-  )
+  );
 }
+
+function DisplayAboutMe() {
+  return (
+    <>
+      <h1>{user.name}</h1>
+      <img
+        className="avatar"
+        src={user.imageUrl}
+        alt={"Photo of " + user.name}
+        style={{ width: user.imageSize, height: user.imageSize }}
+      />
+    </>
+  );
+}
+
+const user = {
+  name: "Nick Alvarez",
+  imageUrl: "/headshot_CityStars.jpg",
+  imageSize: 90,
+};
 
 export default function App() {
   return (
@@ -24,11 +46,11 @@ export default function App() {
         <MyButton />
       </div>
       <div>
-        <AboutPage/>
+        <AboutPage />
+      </div>
+      <div>
+        <DisplayAboutMe />
       </div>
     </>
   );
 }
-
-
-
